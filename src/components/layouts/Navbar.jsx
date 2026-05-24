@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { MdOutlineShoppingCart } from "react-icons/md";
 import NavLink from "../buttons/NavLink";
 import Logo from "./Logo";
 
@@ -6,6 +8,15 @@ const Navbar = () => {
     <>
       <li>
         <NavLink href="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink href="/products">Products</NavLink>
+      </li>
+      <li>
+        <NavLink href="/blog">Blog</NavLink>
+      </li>
+      <li>
+        <NavLink href="/contact">Contact</NavLink>
       </li>
     </>
   );
@@ -44,8 +55,13 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 font-semibold">{nav}</ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end space-x-3">
+          <Link href="/cart" className="btn btn-primary">
+            <MdOutlineShoppingCart />
+          </Link>
+          <Link href="/login">
+            <button className="btn btn-primary btn-outline">Login</button>
+          </Link>
         </div>
       </div>
     </div>
